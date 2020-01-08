@@ -4,7 +4,7 @@ const router = new Router();
 
 
 
-const { getHome, getHomeAdd, getHomeFile, postHomeFile, postHomeDeleteFile ,postHomeAdd} = require('../controller/home.controller')
+const { getHome, getHomeAdd, getHomeFile, postHomeFile, postHomeDeleteFile ,postHomeAdd,getHomeDetailPost} = require('../controller/home.controller')
 
 
 var storage = multer.diskStorage({
@@ -22,4 +22,6 @@ router.post('/add',postHomeAdd)
 router.get('/files', getHomeFile)
 router.post('/delete_file', postHomeDeleteFile)
 router.post('/upload', upload.array('flFileUpload', Infinity), postHomeFile)
+
+router.get('/detail/:slug-:id.html',getHomeDetailPost)
 module.exports = router

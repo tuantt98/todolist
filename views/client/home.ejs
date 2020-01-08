@@ -11,6 +11,7 @@
                 <th scope="col">STT</th>
                 <th scope="col">Tiêu đề</th>
                 <th scope="col">Sub tiêu đề</th>
+                <th scope="col">Chi tiết</th>
                 <th scope="col">Trạng thái</th>
                 <th scope="col">Thao tác</th>
             </tr>
@@ -21,6 +22,7 @@
                 <th scope="row"><%=i+1%></th>
                 <td><%=allTodos[i].title %></td>
                 <td><%=allTodos[i].subtitle%></td>
+                <td><a href="<%=`/detail/${allTodos[i].slug}-${allTodos[i].id}.html` %>">Xem chi tiết</a></td>
                 <% if(allTodos[i].status == 0){%>
                 <td>Chưa hoàn thành</td>
                 <%}else{%>

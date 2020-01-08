@@ -18,6 +18,9 @@ const todo = db.define('todo', {
     },
     isuser: {
         type: Sequelize.INTEGER
+    },
+    slug:{
+        type:Sequelize.TEXT
     }
 
 })
