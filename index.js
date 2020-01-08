@@ -1,14 +1,14 @@
 const express = require('express')
 const bodyParser = require('body-parser');
 const session = require('express-session');
-
+var multer = require('multer');
 
 const app = express()
 
 const db = require('./models/db')
 const home = require('./router/home.router')
 const auth = require('./router/auth.router')
-const {authHome} = require('./middleware/home.middleware')
+const { authHome } = require('./middleware/home.middleware')
 
 app.set('view engine', 'ejs');
 app.set('views', './views');
@@ -30,8 +30,8 @@ app.use(session({
 
 const PORT = process.env.PORT || 5000
 
-app.use('/auth',auth)
-app.use('/',authHome,home)
+app.use('/auth', auth)
+app.use('/', authHome, home)
 
 
 app.use(function (req, res) {

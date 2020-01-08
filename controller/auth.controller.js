@@ -10,7 +10,6 @@ module.exports.authPostLogin = async (req, res) => {
 
     let { username, password } = req.body
 
-    console.log({ username, password })
     let currentUser = await user.findOne({
         where: {
             username,
@@ -33,6 +32,7 @@ module.exports.authPostLogin = async (req, res) => {
 module.exports.authGetRegister = async (req, res) => {
     res.render('auth/register', { errMessage: '' })
 }
+
 module.exports.authPostRegister = async (req, res) => {
     let { username, password, name } = req.body
 
